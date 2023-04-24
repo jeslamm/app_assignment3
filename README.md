@@ -1,2 +1,2 @@
-# [title of your app]
-[description/guide for your app]
+# which simpson are you?
+click the get started button to begin! then click on the introvert button to add points if you think you are more of an introvert, add extrovert points if you think you are more of an extrovert, or add both introvert and extrovert points equally if you think you're both! if there are more introvert points, then you are an introvert! click the introvert button to reveal your simpson character. if you have more extrovert points, then you are an extrovert! click the extrovert button to reveal the character. if both points are equal, then you are an ambivert, or in this casa ABEvert. click abevert to reveal Abe (the grandpa). once you find out which character you are, you can go back to the home page by clicking the return to home page button. 
