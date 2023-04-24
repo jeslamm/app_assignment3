@@ -24,7 +24,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
   <!--Formatting source information and webpage title.-->
   <head>
-    <title>APP NAME GOES HERE</title>
+    <title>WHICH THE SIMPSONS CHARACTER ARE YOU?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="w3.css">
@@ -35,57 +35,30 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <!--Javascript code.-->
 <script>
-	var exampleVariable1 = 0;
-	var exampleVariable2 = 0;
-	var exampleVariable3 = 0;
+	var introvertCounter = 0;
+	var extrovertCounter = 0;
 	
-	function exampleFunction1()
+    function incrementIntrovert()
+    {
+        introvertCounter++;
+        document.getElementById("introvertdisplay").innerHTML = "Introvert count: " + introvertCounter;
+    }
+    function incrementExtrovert()
+    {
+        extrovertCounter++;
+        document.getElementById("extrovertdisplay").innerHTML = "Extrovert count: " + extrovertCounter;
+    }
+	function compareResults()
 	{
 		// Assigns values to existing variables based on user input. The parseFloat() function converts string values to numerical values.
-    		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 + exampleVariable2;
-		
-		alert("You just ran an addition function!");
-		console.log("Addition function was run.");
+    		if(introvertCounter > extrovertCounter){ document.getElementById("abevertdisplay").innerHTML = "You're an introvert! Click introvert button for results!"}
+            else if(introvertCounter < extrovertCounter){ document.getElementById("abevertdisplay").innerHTML = "You're an extrovert! Click extrovert button for results!"}
+            else{document.getElementById("abevertdisplay").innerHTML = "You're an abevert! Click abevert button for results!"}
 	}
 	
-	function exampleFunction2()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 * exampleVariable2;
-		
-		alert("You just ran a multiplication function!");
-		console.log("Multiplication function was run.");
-	}
-	
-	function exampleFunction3()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 ** exampleVariable2;
-		
-		alert("You just ran an exponent function!");
-		console.log("Exponent function was run.");
-	}
-	
-	function exampleResultsFunction()
-	{
-		document.getElementById("endResults").innerHTML = "Your final result is: " + exampleVariable3;
-		resetVariables();
-	}
-	
-	function resetVariables()
-	{
-		exampleVariable1 = 0;
-		exampleVariable2 = 0;
-		exampleVariable3 = 0;
-	}
 </script>
+
+
   
   
  
@@ -119,13 +92,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   <!--Landing page content.-->
   <div id="content" class="w3-container">
   	<!--Header!-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>APP NAME GOES HERE</h1>
+    <center>
+	<div id="header" class="w3-container w3-flat-powderblue">
+		<h1>WHICH SIMPSON CHARACTER ARE YOU?</h1>
 	</div>
 	
-	  <p>INTRODUCTION/DESCRIPTION OF APP GOES HERE</p>
-	
-	  <a href="#one" class="w3-btn w3-grey w3-round">Get Started!</a>
+	  <p>FIND OUT WHICH SIMPSON YOU ARE BASED ON YOUR PERSONALITY!</p>
+	</center>
+	  <a href="#one" class="w3-btn w3-flat-sun-flower w3-round">Get Started!</a>
 	
 	  <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION!</p>
   
@@ -133,75 +107,106 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   
 <!--FIRST SUBPAGE-->
 <div id="one" class="page">
-	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+	<div id="header2" class="w3-container w3-flat-powderblue">
 	</div>
 	
   <center>
-    
+    		<h1>THE ULTIMATE TEST</h1>
+
     	<div id="content2" class="w3-container">
-        	<p>QUESTION 1 GOES HERE</p>    
+        	<p>POINT COUNTER GOES HERE!</p>    
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
 	<form>
+        <p id="introvertdisplay">Introvert points go here.</p>
+        <p id="extrovertdisplay">Extrovert points go here.</p>
+        <p id="abevertdisplay">Results go here.</p>
 		<!--Label for first input field.-->
-		<label for="firstInputBox">Enter a number:</label><br>
+		<label for="introvertdisplay">Introvert counter:</label><br>
 		<!--User input box.-->
-		<input type="number" id="firstInputBox" value="0"><br>
+		<button onclick="incrementIntrovert();">+1 introvert points</button><br>
 		<!--Label for second input field.-->
-		<label for="secondInputBox">Enter another number:</label><br>
+		<label for="extrovertdisplay">Extrovert counter:</label><br>
 		<!--User input box.-->
-		<input type="number" id="secondInputBox" value="0">
-		
+		<button onclick="incrementExtrovert();">+1 extrovert points</button><br><br>
+		<button onclick="compareResults();">Show Results</button>
 		<br><br><br>
 	</form>
       
-  <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
-  <a href="#finalpage" onclick="exampleFunction2();" class="w3-btn w3-grey">Button 2</a>
-  <a href="#finalpage" onclick="exampleFunction3();" class="w3-btn w3-grey">Button 3</a>
+  <a href="#lisapage" onclick="incrementIntrovert();" class="w3-btn w3-flat-emerald">Introvert</a>
+  <a href="#homerpage" onclick="incrementExtrovert();" class="w3-btn w3-flat-carrot">Extrovert</a>
+  <a href="#abepage" onclick="exampleFunction3();" class="w3-btn w3-flat-pomegranate">Abevert</a>
     
   </center>
 </div>  
-  
-  
-  
 
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-<!--LAST SUBPAGE-->
-<div id="finalpage" class="page">
-	<div id="finalheader" class="w3-container w3-flat-carrot">
-		<h1>FINAL PAGE TITLE GOES HERE</h1>
+<!--SUBPAGE FOR INTROVERT-->  
+<div id="lisapage" class="page">
+	<div id="finalheader" class="w3-container w3-flat-powderblue">
+         <center>
+ 
+		<h1>YOU'RE LISA SIMPSON!</h1><br>
 	</div>
-	
-  <center>
+    <center>
+        <img src = "<a href="https://imgur.com/rYXvhtd"><img src="https://imgur.com/rYXvhtd.png" title="source: imgur.com" alt = "lisa"/></a>
+
+</center>
     
 	  <div id="finalcontent" class="w3-container">
-		  <p id="endResults">FINAL PAGE CONTENT GOES HERE</p>
+        <p>You find it hard to make friends so your only real best friend is your saxophone because the other one is not alive (RIP Bleeding Gums Murphy)</p>
 	  </div>
   
-  <a class="w3-btn w3-black" onclick="exampleResultsFunction();">Click me!
-    <br>
-    <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob">
-  </a>
-  <a href="#content" onclick="resetVariables();" class="w3-btn w3-black">Return to Home Page</a>
+  <a href="#content" onclick="resetVariables();" class="w3-btn w3-flat-carrot">Return to Home Page</a>
     
   </center>
 </div>
-  
-  
+	    
+	  
+<!--SUBPAGE FOR EXTROVERT-->  
+<div id="homerpage" class="page">
+<div id="finalheader" class="w3-container w3-flat-powderblue">
+   <center>
+
+    <h1>D'OH! YOU'RE HOMER SIMPSON...</h1><br>
+</div>
+<center>
+    <img src = "<a href="https://imgur.com/XxOu7YT"><img src="https://imgur.com/XxOu7YT.png" title="source: imgur.com" alt = "homer" width = "200"/></a>
+
+</center>
+  <div id="finalcontent" class="w3-container">
+    <p>Eating, drinking, and sleeping is your whole life but you're still outgoing and a party animal tho! What are kids?</p>
+  </div>
+
+<a href="#content" onclick="resetVariables();" class="w3-btn w3-flat-sun-flower">Return to Home Page</a>
+
+</center>
+</div>
+
+
+<!--SUBPAGE FOR ABEVERT-->  
+<div id="abepage" class="page">
+<div id="finalheader" class="w3-container w3-flat-powderblue">
+  <center>
+
+    <h1>YOU'RE ABE. THAT'S TOUGH</h1><br>
+</div>
+<center>
+    <img src = "<a href="https://imgur.com/aSNQiPa"><img src="https://imgur.com/aSNQiPa.png" title="source: imgur.com" alt = "abe"/></a>
+</center>
+  <div id="finalcontent" class="w3-container">
+      <p>The meme says it all.</p>
+  </div>
+
+<a href="#content" onclick="resetVariables();" class="w3-btn w3-flat-sun-flower">Return to Home Page</a>
+
+</center>
+</div>
+	
   
 <!--Footer!-->
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>YOUR NAME (or anything you want) HERE</p>
+<footer class="w3-bottom w3-container w3-flat-powderblue">
+	<p>It's a pretty freakin lit personality test!</p>
 </footer>
 </div>
 
